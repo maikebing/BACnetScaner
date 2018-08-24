@@ -1,0 +1,185 @@
+10:38:14  Begin Translate BACnet Datas
+10:38:21  InitSettings Finished
+10:38:21  Detect Device: 1968
+10:38:21  Detect Device: 1969
+10:38:51  BeginScanBac
+10:38:53   @ 192.168.20.159:2068:1968 Scan 
+10:38:53   @ 192.168.20.159:2068:1968  OBJECT_ANALOG_INPUT.0 0
+10:38:54   @ 192.168.20.159:2068:1968  OBJECT_ANALOG_INPUT.1 2
+10:38:54   @ 192.168.20.159:2068:1968  OBJECT_ANALOG_INPUT.2 3
+10:38:54   @ 192.168.20.159:2068:1968  OBJECT_ANALOG_OUTPUT.0 1
+10:38:54   @ 192.168.20.159:2068:1968  OBJECT_ANALOG_OUTPUT.1 2
+10:38:54   @ 192.168.20.159:2068:1968  OBJECT_ANALOG_OUTPUT.2 3
+10:38:54  SendUdpMessage: 1234567890;1;report;20180820103853;1;1002;1;101;0
+SendUdpMessage: 1234567890;1;report;20180820103854;2;1003;1;101;2
+SendUdpMessage: 1234567890;1;report;20180820103854;3;1004;1;101;3
+SendUdpMessage: 1234567890;1;report;20180820103854;4;1005;1;101;1
+SendUdpMessage: 1234567890;1;report;20180820103854;5;1006;1;101;2
+SendUdpMessage: 1234567890;1;report;20180820103854;6;1007;1;101;3
+
+10:39:01   ^ Heart Beat ^ 1
+10:39:11   ^ Heart Beat ^ 2
+10:39:21   ^ Heart Beat ^ 3
+10:39:24   @ 192.168.20.159:2068:1968 Scan 
+10:39:24   @ 192.168.20.159:2068:1968  OBJECT_ANALOG_INPUT.0 0
+10:39:24   @ 192.168.20.159:2068:1968  OBJECT_ANALOG_INPUT.1 2
+10:39:24   @ 192.168.20.159:2068:1968  OBJECT_ANALOG_INPUT.2 3
+10:39:24   @ 192.168.20.159:2068:1968  OBJECT_ANALOG_OUTPUT.0 1
+10:39:24   @ 192.168.20.159:2068:1968  OBJECT_ANALOG_OUTPUT.1 2
+10:39:25   @ 192.168.20.159:2068:1968  OBJECT_ANALOG_OUTPUT.2 3
+10:39:25  SendUdpMessage: 1234567890;1;report;20180820103924;7;1002;1;101;0
+SendUdpMessage: 1234567890;1;report;20180820103924;8;1003;1;101;2
+SendUdpMessage: 1234567890;1;report;20180820103924;9;1004;1;101;3
+SendUdpMessage: 1234567890;1;report;20180820103924;10;1005;1;101;1
+SendUdpMessage: 1234567890;1;report;20180820103924;11;1006;1;101;2
+SendUdpMessage: 1234567890;1;report;20180820103925;12;1007;1;101;3
+
+10:39:31   ^ Heart Beat ^ 4
+10:39:41   ^ Heart Beat ^ 5
+10:39:51   ^ Heart Beat ^ 6
+10:39:55   @ 192.168.20.159:2068:1968 Scan 
+10:39:55   @ 192.168.20.159:2068:1968  OBJECT_ANALOG_INPUT.0 0
+10:39:55   @ 192.168.20.159:2068:1968  OBJECT_ANALOG_INPUT.1 2
+10:39:55   @ 192.168.20.159:2068:1968  OBJECT_ANALOG_INPUT.2 3
+10:39:55   @ 192.168.20.159:2068:1968  OBJECT_ANALOG_OUTPUT.0 1
+10:39:55   @ 192.168.20.159:2068:1968  OBJECT_ANALOG_OUTPUT.1 2
+10:39:55   @ 192.168.20.159:2068:1968  OBJECT_ANALOG_OUTPUT.2 3
+10:39:55  SendUdpMessage: 1234567890;1;report;20180820103955;13;1002;1;101;0
+SendUdpMessage: 1234567890;1;report;20180820103955;14;1003;1;101;2
+SendUdpMessage: 1234567890;1;report;20180820103955;15;1004;1;101;3
+SendUdpMessage: 1234567890;1;report;20180820103955;16;1005;1;101;1
+SendUdpMessage: 1234567890;1;report;20180820103955;17;1006;1;101;2
+SendUdpMessage: 1234567890;1;report;20180820103955;18;1007;1;101;3
+
+10:42:23  Begin Translate BACnet Datas
+10:42:23  InitSettings Finished
+10:42:24  Detect Device: 1968
+10:42:24  Detect Device: 1969
+10:42:54  BeginScanBac
+10:42:56   @ 192.168.20.159:2068:1968 Scan 
+10:42:56   @ 192.168.20.159:2068:1968  OBJECT_ANALOG_INPUT.0 0
+10:42:56   @ 192.168.20.159:2068:1968  OBJECT_ANALOG_INPUT.1 2
+10:42:56   @ 192.168.20.159:2068:1968  OBJECT_ANALOG_INPUT.2 3
+10:42:56   @ 192.168.20.159:2068:1968  OBJECT_ANALOG_OUTPUT.0 1
+10:42:56   @ 192.168.20.159:2068:1968  OBJECT_ANALOG_OUTPUT.1 2
+10:42:56   @ 192.168.20.159:2068:1968  OBJECT_ANALOG_OUTPUT.2 3
+10:42:56  SendUdpMessage: 1234567890;1;report;20180820104256;1;1002;1;101;0
+SendUdpMessage: 1234567890;1;report;20180820104256;2;1003;1;101;2
+SendUdpMessage: 1234567890;1;report;20180820104256;3;1004;1;101;3
+SendUdpMessage: 1234567890;1;report;20180820104256;4;1005;1;101;1
+SendUdpMessage: 1234567890;1;report;20180820104256;5;1006;1;101;2
+SendUdpMessage: 1234567890;1;report;20180820104256;6;1007;1;101;3
+
+10:43:04   ^ Heart Beat ^ 1
+10:43:14   ^ Heart Beat ^ 2
+10:43:24   ^ Heart Beat ^ 3
+10:43:26   @ 192.168.20.159:2068:1968 Scan 
+10:43:26   @ 192.168.20.159:2068:1968  OBJECT_ANALOG_INPUT.0 0
+10:43:27   @ 192.168.20.159:2068:1968  OBJECT_ANALOG_INPUT.1 2
+10:43:27   @ 192.168.20.159:2068:1968  OBJECT_ANALOG_INPUT.2 3
+10:43:27   @ 192.168.20.159:2068:1968  OBJECT_ANALOG_OUTPUT.0 1
+10:43:27   @ 192.168.20.159:2068:1968  OBJECT_ANALOG_OUTPUT.1 2
+10:43:27   @ 192.168.20.159:2068:1968  OBJECT_ANALOG_OUTPUT.2 3
+10:43:27  SendUdpMessage: 1234567890;1;report;20180820104326;7;1002;1;101;0
+SendUdpMessage: 1234567890;1;report;20180820104327;8;1003;1;101;2
+SendUdpMessage: 1234567890;1;report;20180820104327;9;1004;1;101;3
+SendUdpMessage: 1234567890;1;report;20180820104327;10;1005;1;101;1
+SendUdpMessage: 1234567890;1;report;20180820104327;11;1006;1;101;2
+SendUdpMessage: 1234567890;1;report;20180820104327;12;1007;1;101;3
+
+10:43:34   ^ Heart Beat ^ 4
+10:43:44   ^ Heart Beat ^ 5
+11:28:55  Begin Translate BACnet Datas
+11:28:55  InitSettings Finished
+11:30:30  Begin Translate BACnet Datas
+11:30:30  InitSettings Finished
+11:33:01  Begin Translate BACnet Datas
+11:33:01  InitSettings Finished
+11:35:22  Begin Translate BACnet Datas
+11:35:22  InitSettings Finished
+11:38:24  Begin Translate BACnet Datas
+11:38:24  InitSettings Finished
+11:38:40  Begin Translate BACnet Datas
+11:38:40  InitSettings Finished
+11:47:07  Begin Translate BACnet Datas
+11:47:07  InitSettings Finished
+11:51:48  Begin Translate BACnet Datas
+11:51:48  InitSettings Finished
+11:53:25  Begin Translate BACnet Datas
+11:53:25  InitSettings Finished
+11:53:43  Begin Translate BACnet Datas
+11:53:43  InitSettings Finished
+11:53:51  Begin Translate BACnet Datas
+11:53:51  InitSettings Finished
+11:57:51  Begin Translate BACnet Datas
+11:57:51  InitSettings Finished
+12:02:17  Begin Translate BACnet Datas
+12:02:17  InitSettings Finished
+12:02:25  Begin Translate BACnet Datas
+12:02:25  InitSettings Finished
+12:09:07  Begin Translate BACnet Datas
+12:09:07  InitSettings Finished
+12:14:48  Begin Translate BACnet Datas
+12:14:48  InitSettings Finished
+12:15:06  Begin Translate BACnet Datas
+12:15:06  InitSettings Finished
+12:17:34  Begin Translate BACnet Datas
+12:17:34  InitSettings Finished
+13:44:32  Begin Translate BACnet Datas
+13:44:32  InitSettings Finished
+13:46:41  Begin Translate BACnet Datas
+13:46:41  InitSettings Finished
+13:48:16  Begin Translate BACnet Datas
+13:48:16  InitSettings Finished
+13:48:50  Begin Translate BACnet Datas
+13:48:50  InitSettings Finished
+13:49:25  Begin Translate BACnet Datas
+13:49:25  InitSettings Finished
+13:54:45  Begin Translate BACnet Datas
+13:54:45  InitSettings Finished
+14:00:36  Begin Translate BACnet Datas
+14:00:36  InitSettings Finished
+14:03:31  Begin Translate BACnet Datas
+14:03:31  InitSettings Finished
+14:07:49  Begin Translate BACnet Datas
+14:07:49  InitSettings Finished
+14:08:45  Begin Translate BACnet Datas
+14:08:45  InitSettings Finished
+14:26:38  Begin Translate BACnet Datas
+14:26:38  InitSettings Finished
+14:26:58  Begin Translate BACnet Datas
+14:26:58  InitSettings Finished
+14:29:20  Begin Translate BACnet Datas
+14:29:20  InitSettings Finished
+14:41:16  Begin Translate BACnet Datas
+14:41:16  InitSettings Finished
+14:53:00  Begin Translate BACnet Datas
+14:53:00  InitSettings Finished
+15:50:27  Begin Translate BACnet Datas
+15:50:27  InitSettings Finished
+15:54:12  Begin Translate BACnet Datas
+15:54:12  InitSettings Finished
+15:55:04  Begin Translate BACnet Datas
+15:55:04  InitSettings Finished
+16:00:07  Begin Translate BACnet Datas
+16:00:07  InitSettings Finished
+16:00:31  Begin Translate BACnet Datas
+16:00:31  InitSettings Finished
+16:21:41  Begin Translate BACnet Datas
+16:21:41  InitSettings Finished
+16:21:54  Begin Translate BACnet Datas
+16:21:54  InitSettings Finished
+16:36:18  Begin Translate BACnet Datas
+16:36:18  InitSettings Finished
+16:49:49  Begin Translate BACnet Datas
+16:49:49  InitSettings Finished
+16:53:03  Begin Translate BACnet Datas
+16:53:03  InitSettings Finished
+16:56:53  Begin Translate BACnet Datas
+16:56:53  InitSettings Finished
+16:57:47  Begin Translate BACnet Datas
+16:57:47  InitSettings Finished
+16:59:52  Begin Translate BACnet Datas
+16:59:52  InitSettings Finished
+17:01:49  Begin Translate BACnet Datas
+17:01:49  InitSettings Finished

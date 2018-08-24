@@ -1,0 +1,17 @@
+17:18:49  InitUdp_Client: :值不能为 null。
+参数名: ipString
+   在 System.Net.IPAddress.InternalParse(String ipString, Boolean tryParse)
+   在 System.Net.IPAddress.Parse(String ipString)
+   在 BACnetTranslator.Program.InitUdp_Client() 位置 d:\原电脑\原F盘\Persagy\研发相关\1、工作\16、统一平台三方接口\1、功能需求及设计\bacnetipv2\BACnetScanBIMxx\BACnetScanBIM\BACnetTranslator\Program.cs:行号 111
+17:25:24  BacProperty.FromExcelRow:未将对象引用设置到对象的实例。
+   在 BACnetTranslator.BacProperty.FromExcelRow(IRow row) 位置 d:\原电脑\原F盘\Persagy\研发相关\1、工作\16、统一平台三方接口\1、功能需求及设计\bacnetipv2\BACnetScanBIMxx\BACnetScanBIM\BACnetTranslator\BacNode.cs:行号 78
+17:25:24  BacProperty.FromExcelRow:未将对象引用设置到对象的实例。
+   在 BACnetTranslator.BacProperty.FromExcelRow(IRow row) 位置 d:\原电脑\原F盘\Persagy\研发相关\1、工作\16、统一平台三方接口\1、功能需求及设计\bacnetipv2\BACnetScanBIMxx\BACnetScanBIM\BACnetTranslator\BacNode.cs:行号 78
+17:25:24  BacProperty.FromExcelRow:未将对象引用设置到对象的实例。
+   在 BACnetTranslator.BacProperty.FromExcelRow(IRow row) 位置 d:\原电脑\原F盘\Persagy\研发相关\1、工作\16、统一平台三方接口\1、功能需求及设计\bacnetipv2\BACnetScanBIMxx\BACnetScanBIM\BACnetTranslator\BacNode.cs:行号 78
+17:25:24  BacProperty.FromExcelRow:未将对象引用设置到对象的实例。
+   在 BACnetTranslator.BacProperty.FromExcelRow(IRow row) 位置 d:\原电脑\原F盘\Persagy\研发相关\1、工作\16、统一平台三方接口\1、功能需求及设计\bacnetipv2\BACnetScanBIMxx\BACnetScanBIM\BACnetTranslator\BacNode.cs:行号 78
+17:25:24  BacProperty.FromExcelRow:未将对象引用设置到对象的实例。
+   在 BACnetTranslator.BacProperty.FromExcelRow(IRow row) 位置 d:\原电脑\原F盘\Persagy\研发相关\1、工作\16、统一平台三方接口\1、功能需求及设计\bacnetipv2\BACnetScanBIMxx\BACnetScanBIM\BACnetTranslator\BacNode.cs:行号 78
+17:25:24  BacProperty.FromExcelRow:未将对象引用设置到对象的实例。
+   在 BACnetTranslator.BacProperty.FromExcelRow(IRow row) 位置 d:\原电脑\原F盘\Persagy\研发相关\1、工作\16、统一平台三方接口\1、功能需求及设计\bacnetipv2\BACnetScanBIMxx\BACnetScanBIM\BACnetTranslator\BacNode.cs:行号 78

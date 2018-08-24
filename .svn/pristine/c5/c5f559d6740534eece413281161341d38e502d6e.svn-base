@@ -1,0 +1,16 @@
+﻿using System;
+using System.Collections.Generic;
+using System.IO.BACnet;
+using System.Linq;
+using System.Text;
+
+namespace BACnetTranslator
+{
+    public class BacProperty
+    {
+        public BacnetObjectId ObjectId { get; set; }
+        public string PROP_DESCRIPTION { get; set; }    //描述
+        public string PROP_OBJECT_NAME { get; set; }    //点名
+        public object PROP_PRESENT_VALUE { get; set; }  //值
+    }
+}

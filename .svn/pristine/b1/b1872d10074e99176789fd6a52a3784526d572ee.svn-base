@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <appSettings>
+    <add key="LocalIP" value="192.168.1.81"/>
+    <add key="LocalPort" value="9876"/>
+    <add key="RemoteIP" value="192.168.100.44"/>
+    <add key="RemotePort" value="8080"/>
+    <add key="BuildingSign" value="1000000001"/>
+    <add key="Gateway" value="1"/>
+  </appSettings>
+</configuration>

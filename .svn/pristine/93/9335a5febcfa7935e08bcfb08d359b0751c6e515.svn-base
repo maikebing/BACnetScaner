@@ -1,0 +1,81 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.IO.BACnet;
+using System.Linq;
+using System.Text;
+using System.Windows;
+
+namespace BACnetScanBIM
+{
+    public class BacNode : DependencyObject
+    {
+        #region Address
+        public static readonly DependencyProperty AddressProperty = DependencyProperty.Register("Address",
+            typeof(BacnetAddress), typeof(BacNode),
+            new PropertyMetadata((sender, e) =>
+            {
+                var vm = sender as BacNode;
+                if (vm == null) return;
+            }));
+        public BacnetAddress Address
+        {
+            get { return GetValue(AddressProperty) as BacnetAddress; }
+            set { SetValue(AddressProperty, value); }
+        }
+        #endregion
+
+        #region DeviceId
+        public static readonly DependencyProperty DeviceIdProperty = DependencyProperty.Register("DeviceId",
+            typeof(uint), typeof(BacNode),
+            new PropertyMetadata((sender, e) =>
+            {
+                var vm = sender as BacNode;
+                if (vm == null) return;
+            }));
+        public uint DeviceId
+        {
+            get { return (uint)GetValue(DeviceIdProperty); }
+            set { SetValue(DeviceIdProperty, value); }
+        }
+        #endregion
+
+        #region Items
+        public static readonly DependencyProperty ItemsProperty = DependencyProperty.Register("Items",
+            typeof(ObservableCollection<BacSubNode>), typeof(BacNode),
+            new PropertyMetadata((sender, e) =>
+            {
+                var vm = sender as BacNode;
+                if (vm == null) return;
+            }));
+        public ObservableCollection<BacSubNode> Items
+        {
+            get { return GetValue(ItemsProperty) as ObservableCollection<BacSubNode>; }
+            set { SetValue(ItemsProperty, value); }
+        }
+        #endregion
+
+        public BacNode(BacnetAddress adr, uint device_id)
+        {
+            this.Address = adr;
+            this.DeviceId = device_id;
+        }
+    }
+    public class BacSubNode : DependencyObject
+    {
+        #region ObjectId
+        public static readonly DependencyProperty ObjectIdProperty = DependencyProperty.Register("ObjectId",
+            typeof(BacnetObjectId), typeof(BacSubNode),
+            new PropertyMetadata((sender, e) =>
+            {
+                var vm = sender as BacSubNode;
+                if (vm == null) return;
+            }));
+        public BacnetObjectId ObjectId
+        {
+            get { return (BacnetObjectId)GetValue(ObjectIdProperty); }
+            set { SetValue(ObjectIdProperty, value); }
+        }
+        #endregion
+    }
+}

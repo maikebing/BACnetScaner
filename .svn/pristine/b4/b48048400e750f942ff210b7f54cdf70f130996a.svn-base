@@ -1,0 +1,55 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
+using System.Linq;
+using System.Threading;
+using System.Windows;
+
+namespace BACnetScanBIM
+{
+    /// <summary>
+    /// App.xaml 的交互逻辑
+    /// </summary>
+    public partial class App : Application
+    {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+
+            if (string.Equals(ConfigurationManager.AppSettings["OnlyConsole"], "True", StringComparison.CurrentCultureIgnoreCase))
+            {
+                Logger.Log("Console Start");
+                MainVM.Instance.Run();
+                Thread.Sleep(2000);
+                this.ConsoleScan();
+                Console.WriteLine("Press Enter to Exit");
+                Console.ReadLine();
+            }
+            else
+            {
+                var win = new MainWindow();
+                win.Show();
+            }
+        }
+        void ConsoleScan()
+        {
+            Console.ReadLine();
+            Logger.Log("Begin Scan Device");
+            var deviceList = MainVM.Instance.DevicesList;
+            foreach (var device in deviceList)
+            {
+                var count = MainVM.Instance.GetDeviceArrayIndexCount(device);
+                MainVM.Instance.ScanPointsBatch(device, count);
+            }
+            Logger.Log("Begin Scan Properties");
+            foreach (var device in deviceList)
+            {
+                MainVM.Instance.ScanSubProperties(device);
+            }
+            Logger.Log("Scan Success");
+            MainVM.Instance.Save2Excel();
+            Logger.Log("Save2Excel Success");
+        }
+    }
+}

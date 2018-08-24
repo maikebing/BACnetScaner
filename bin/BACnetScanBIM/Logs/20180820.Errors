@@ -1,0 +1,27 @@
+11:52:29  Init: :无法将类型为“System.Xml.XmlText”的对象强制转换为类型“System.Xml.XmlElement”。
+   在 BACnetTranslator.Program.LoadSettingFromXML2(String file) 位置 d:\原电脑\原F盘\Persagy\研发相关\1、工作\16、统一平台三方接口\2、程序\bacnet-c#\BACnetScanBIM\BACnetTranslator\Program.cs:行号 123
+   在 BACnetTranslator.Program.Init() 位置 d:\原电脑\原F盘\Persagy\研发相关\1、工作\16、统一平台三方接口\2、程序\bacnet-c#\BACnetScanBIM\BACnetTranslator\Program.cs:行号 73
+11:53:26  Init: :无法将类型为“System.Xml.XmlText”的对象强制转换为类型“System.Xml.XmlElement”。
+   在 BACnetTranslator.Program.LoadSettingFromXML2(String file) 位置 d:\原电脑\原F盘\Persagy\研发相关\1、工作\16、统一平台三方接口\2、程序\bacnet-c#\BACnetScanBIM\BACnetTranslator\Program.cs:行号 123
+   在 BACnetTranslator.Program.Init() 位置 d:\原电脑\原F盘\Persagy\研发相关\1、工作\16、统一平台三方接口\2、程序\bacnet-c#\BACnetScanBIM\BACnetTranslator\Program.cs:行号 73
+11:53:43  Init: :无法将类型为“System.Xml.XmlText”的对象强制转换为类型“System.Xml.XmlElement”。
+   在 BACnetTranslator.Program.LoadSettingFromXML2(String file) 位置 d:\原电脑\原F盘\Persagy\研发相关\1、工作\16、统一平台三方接口\2、程序\bacnet-c#\BACnetScanBIM\BACnetTranslator\Program.cs:行号 123
+   在 BACnetTranslator.Program.Init() 位置 d:\原电脑\原F盘\Persagy\研发相关\1、工作\16、统一平台三方接口\2、程序\bacnet-c#\BACnetScanBIM\BACnetTranslator\Program.cs:行号 73
+11:57:57  Init: :无法将类型为“System.Xml.XmlText”的对象强制转换为类型“System.Xml.XmlElement”。
+   在 BACnetTranslator.Program.LoadSettingFromXML2(String file) 位置 d:\原电脑\原F盘\Persagy\研发相关\1、工作\16、统一平台三方接口\2、程序\bacnet-c#\BACnetScanBIM\BACnetTranslator\Program.cs:行号 123
+   在 BACnetTranslator.Program.Init() 位置 d:\原电脑\原F盘\Persagy\研发相关\1、工作\16、统一平台三方接口\2、程序\bacnet-c#\BACnetScanBIM\BACnetTranslator\Program.cs:行号 73
+12:02:17  Init: :无法将类型为“System.Xml.XmlText”的对象强制转换为类型“System.Xml.XmlElement”。
+   在 BACnetTranslator.Program.LoadSettingFromXML2(String file) 位置 d:\原电脑\原F盘\Persagy\研发相关\1、工作\16、统一平台三方接口\2、程序\bacnet-c#\BACnetScanBIM\BACnetTranslator\Program.cs:行号 123
+   在 BACnetTranslator.Program.Init() 位置 d:\原电脑\原F盘\Persagy\研发相关\1、工作\16、统一平台三方接口\2、程序\bacnet-c#\BACnetScanBIM\BACnetTranslator\Program.cs:行号 73
+14:29:20  Init: :无法将类型为“System.Xml.XmlText”的对象强制转换为类型“System.Xml.XmlElement”。
+   在 BACnetTranslator.Program.LoadSettingFromXML(String file) 位置 d:\原电脑\原F盘\Persagy\研发相关\1、工作\16、统一平台三方接口\2、程序\bacnet-c#\BACnetScanBIM\BACnetTranslator\Program.cs:行号 115
+   在 BACnetTranslator.Program.Init() 位置 d:\原电脑\原F盘\Persagy\研发相关\1、工作\16、统一平台三方接口\2、程序\bacnet-c#\BACnetScanBIM\BACnetTranslator\Program.cs:行号 90
+15:50:27  Init: :未将对象引用设置到对象的实例。
+   在 BACnetTranslator.Program.readExcel(String file, String sheetName) 位置 d:\原电脑\原F盘\Persagy\研发相关\1、工作\16、统一平台三方接口\2、程序\bacnet-c#\BACnetScanBIM\BACnetTranslator\Program.cs:行号 121
+   在 BACnetTranslator.Program.Init() 位置 d:\原电脑\原F盘\Persagy\研发相关\1、工作\16、统一平台三方接口\2、程序\bacnet-c#\BACnetScanBIM\BACnetTranslator\Program.cs:行号 92
+16:00:18  Init: :未将对象引用设置到对象的实例。
+   在 BACnetTranslator.Program.readExcel(String file, String sheetName) 位置 d:\原电脑\原F盘\Persagy\研发相关\1、工作\16、统一平台三方接口\2、程序\bacnet-c#\BACnetScanBIM\BACnetTranslator\Program.cs:行号 122
+   在 BACnetTranslator.Program.Init() 位置 d:\原电脑\原F盘\Persagy\研发相关\1、工作\16、统一平台三方接口\2、程序\bacnet-c#\BACnetScanBIM\BACnetTranslator\Program.cs:行号 92
+16:59:37  Init: :未将对象引用设置到对象的实例。
+   在 BACnetTranslator.Program.readExcel(String file, String sheetName) 位置 d:\原电脑\原F盘\Persagy\研发相关\1、工作\16、统一平台三方接口\2、程序\bacnet-c#\BACnetScanBIM\BACnetTranslator\Program.cs:行号 123
+   在 BACnetTranslator.Program.Init() 位置 d:\原电脑\原F盘\Persagy\研发相关\1、工作\16、统一平台三方接口\2、程序\bacnet-c#\BACnetScanBIM\BACnetTranslator\Program.cs:行号 92

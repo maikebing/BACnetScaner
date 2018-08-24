@@ -1,0 +1,203 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net;
+using System.Text;
+using System.Threading;
+using UDPUtil;
+using System.Configuration;
+using BACnetCommonLib;
+using System.IO;
+using NPOI.HSSF.UserModel;
+using System.IO.BACnet;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
+
+namespace BACnetTranslator
+{
+    class Program
+    {
+        static BacnetClient Bacnet_client;
+        static AsyncUdpClient Udp_Client;
+        static List<BacDevice> DevicesList;
+
+        static int invokeId = 0;
+        static int GetCurrentInvokeId()
+        {
+            invokeId++;
+            if (invokeId >= 65536) invokeId = 1;
+            return invokeId;
+        }
+        static void Main(string[] args)
+        {
+            Logger.Log("Begin Translate BACnet Datas");
+            Init();
+        }
+        //心跳
+        static int HeartBeatIndex = 0;
+        static int GetHeartBeatIndex()
+        {
+            HeartBeatIndex++;
+            if (HeartBeatIndex == int.MaxValue)
+                HeartBeatIndex = 0;
+            return HeartBeatIndex;
+        }
+        static void Init()
+        {
+            Settings.InitSettings();
+            InitBacnet_client();
+            InitUdp_Client();
+            BeginScanBac();
+            var heartBeatTime = int.Parse(ConfigurationManager.AppSettings["HeartBeatTime"]);
+            while (true)
+            {
+                Thread.Sleep(heartBeatTime);
+                Logger.Log("Heart Beat " + GetHeartBeatIndex());
+            }
+        }
+        static void InitBacnet_client()
+        {
+            Bacnet_client = new BacnetClient(new BacnetIpUdpProtocolTransport(int.Parse(ConfigurationManager.AppSettings["LocalBacPort"]), false));
+            Bacnet_client.OnIam -= new BacnetClient.IamHandler(handler_OnIam);
+            Bacnet_client.OnIam += new BacnetClient.IamHandler(handler_OnIam);
+
+            Bacnet_client.Start();
+            Bacnet_client.WhoIs();
+        }
+        static void InitUdp_Client()
+        {
+            //本机节点
+            var LocalIP = IPAddress.Parse(ConfigurationManager.AppSettings["LocalIP"]);
+            var LocalPort = int.Parse(ConfigurationManager.AppSettings["LocalPort"]);
+            IPEndPoint localEP = new IPEndPoint(LocalIP, LocalPort);
+            // 远程节点
+            var RemoteIP = IPAddress.Parse(ConfigurationManager.AppSettings["RemoteIP"]);
+            var RemotePort = int.Parse(ConfigurationManager.AppSettings["RemotePort"]);
+            IPEndPoint remoteEP = new IPEndPoint(RemoteIP, RemotePort);
+            Udp_Client = new AsyncUdpClient(localEP, remoteEP, false, LoggerImpl.Instance());
+            Udp_Client.Start();
+        }
+        //发现设备
+        static bool IsDetecteDeviceFinished = false;
+        static void handler_OnIam(BacnetClient sender, BacnetAddress adr, uint deviceId, uint maxAPDU,
+                                    BacnetSegmentations segmentation, ushort vendorId)
+        {
+            if (IsDetecteDeviceFinished) return;
+            if (DevicesList == null) DevicesList = new List<BacDevice>();
+            lock (DevicesList)
+            {
+                if (DevicesList.Any(x => x.DeviceId == deviceId)) return;
+                var device = new BacDevice(adr, deviceId);
+                device.LoadPropertiesFromExcel(Path.Combine(Constants.AimExcelDir, "" + deviceId + ".xls"));
+                DevicesList.Add(device);
+                Logger.Log(@"Detect Device: " + deviceId);
+            }
+        }
+        //扫点
+        static void BeginScanBac()
+        {
+            Logger.Log("BeginScanBac");
+            InitBacnet_client();
+            Thread.Sleep(int.Parse(ConfigurationManager.AppSettings["WaitTime"]));
+            IsDetecteDeviceFinished = true;
+            if (DevicesList == null) return;
+            DevicesList = DevicesList.Where(x => x != null && x.Properties != null && x.Properties.Count > 0).
+                OrderBy(x => x.DeviceId).ToList();
+            TotalScanCount = DevicesList.Count;
+            foreach (var device in DevicesList)
+            {
+                var BacBkw = new BackgroundWorker();
+                BacBkw.DoWork += (sender, e) =>
+                {
+                    BeginScanBac(device);
+                };
+                BacBkw.RunWorkerAsync();
+            }
+        }
+        //扫点轮次
+        static int ScanIndex = 0;
+        static int TotalScanCount = 0;
+        static int ScanFinishedCount = 0;
+        static void BeginScanBac(BacDevice device)
+        {
+            if (device == null || device.Properties == null || device.Address == null) return;
+            while (true)
+            {
+                try
+                {
+                    if (device.ScanIndex != ScanIndex)
+                    {
+                        Thread.Sleep(10000);
+                        continue;
+                    }
+                    StringBuilder sb = new StringBuilder();
+                    var adr = device.Address;
+                    foreach (var pro in device.Properties)
+                    {
+                        var oid = pro.ObjectId;
+                        var invokedId = (byte)(GetCurrentInvokeId() % 256);
+
+                        List<BacnetPropertyReference> rList = new List<BacnetPropertyReference>();
+                        rList.Add(new BacnetPropertyReference((uint)BacnetPropertyIds.PROP_PRESENT_VALUE, uint.MaxValue));
+                        IList<BacnetReadAccessResult> lstAccessRst;
+                        var bRst = Bacnet_client.ReadPropertyMultipleRequest(adr, oid, rList, out lstAccessRst, invokedId);
+                        if (!bRst) continue;
+                        if (lstAccessRst == null || lstAccessRst.Count == 0) continue;
+                        var aRst = lstAccessRst.First();
+                        if (aRst.values == null || aRst.values.Count == 0) continue;
+                        var bPValue = aRst.values.First();
+                        if (bPValue.value == null || bPValue.value.Count == 0) continue;
+                        var bValue = bPValue.value.First();
+                        var strBValue = "" + bValue.Value;
+                        //发现不同值
+                        if (!string.Equals(strBValue, pro.PROP_PRESENT_VALUE))
+                        {
+                            pro.PROP_PRESENT_VALUE = strBValue;
+                            SendUdpMessage(pro);
+                            sb.Append("" + oid.Instance + "," + pro.PROP_OBJECT_NAME + " , " + strBValue + " ; ");
+                        }
+                    }
+                    sb.AppendLine("----" + adr + ":" + device.DeviceId + " Scan " + device.ScanIndex);
+                    Logger.Log(sb.ToString());
+
+                    device.ScanIndex++;
+                    if (device.ScanIndex == int.MaxValue) device.ScanIndex = 0;
+                    ScanFinishedCount++;
+                    //扫描完一轮
+                    if (ScanFinishedCount == TotalScanCount)
+                    {
+                        ScanFinishedCount = 0;
+                        ScanIndex++;
+                        if (ScanIndex == int.MaxValue) ScanIndex = 0;
+                    }
+                }
+                catch (Exception exp)
+                {
+                    Logger.Error("ScanBac: ", exp);
+                }
+            }
+        }
+        //上传UDP
+        static void SendUdpMessage(BacProperty pro, int invokedId = 0)
+        {
+            if (Udp_Client == null || string.IsNullOrEmpty(Settings.BuildingSign) || pro == null) return;
+            StringBuilder sb = new StringBuilder();
+            sb.AppendWithSplit(Settings.BuildingSign);
+            sb.AppendWithSplit(Settings.Gateway);
+            sb.AppendWithSplit(Settings.SendType);
+            sb.AppendWithSplit(DateTime.Now.ToString(@"yyyyMMddHHmmss"));
+            sb.AppendWithSplit(invokedId == 0 ? GetCurrentInvokeId() : invokedId);
+            var deviceId = pro.Device.DeviceId + "";
+            if (string.IsNullOrEmpty(deviceId) || deviceId.Length < 5) return;
+            var meterSign = Settings.MeterSignPre + deviceId.Substring(0, deviceId.Length - 4) + "." + pro.PROP_OBJECT_NAME;
+            sb.AppendWithSplit(meterSign);
+            sb.AppendWithSplit(1);
+            sb.AppendWithSplit(Settings.FuncId);
+            sb.Append(pro.PROP_PRESENT_VALUE);
+
+            var str = sb.ToString();
+            Udp_Client.PushSend(str);
+            Logger.Log("SendUdpMessage: " + str);
+        }
+    }
+}

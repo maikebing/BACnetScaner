@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <appSettings>
+    <add key="OnlyConsole" value="True"/>
+    <add key="ScanBatchStep" value="50"/>
+    <add key="CombineHeaderName" value="点位sign(唯一)"/>
+    <add key="CombineHeaderDes" value="名称"/>
+  </appSettings>
+</configuration>

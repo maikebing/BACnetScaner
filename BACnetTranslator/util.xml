@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<RunMode>formal</RunMode>
+	<BreakPoint>true</BreakPoint>
+	<ResumeHistoryPriority>true</ResumeHistoryPriority>
+	<StorageClass>DB_MySql</StorageClass>
+	<StoragePath>D:/xml</StoragePath>
+	<PointsFrom>Excel</PointsFrom>
+	<IntervalType>interval</IntervalType>
+	<CollectInterval>10second</CollectInterval>
+	<SendCount>10</SendCount>
+	<SendInterval>1min</SendInterval>
+	<HandleDataThread>1</HandleDataThread>
+	<BuildingQaurry>manual</BuildingQaurry>
+	<BuildingControl></BuildingControl>
+	<PortControl>8082</PortControl>
+	<WaitingTimeControl>3Second</WaitingTimeControl>
+	<CollectorProtocolGroup>bacnetipv2</CollectorProtocolGroup>
+	<NodeMac>1</NodeMac>
+	<ReportVersion>standard</ReportVersion>
+	<SimulationDevices>1021,1031,1032,1034,1036,1037,1038</SimulationDevices>
+
+	<UploadList>
+		<Upload>
+			<PROTOCOL>UDP</PROTOCOL>
+			<IP>192.168.20.159</IP>
+			<Port>8123</Port>
+			<ServerIP>192.168.20.159</ServerIP>
+			<ServerPort>80</ServerPort>
+			<Mode>mina</Mode>
+			<Max_size>1000</Max_size>
+			<SleepCount>1000</SleepCount>
+			<Separate>false</Separate>
+			<Separate_begin>(</Separate_begin>
+			<Separate_end>)</Separate_end>
+		</Upload>
+	</UploadList>
+</root>
