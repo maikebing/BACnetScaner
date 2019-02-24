@@ -25,6 +25,7 @@ namespace BACnetScaner
                 var count = GetDeviceArrayIndexCount(device);
                 ScanPointsBatch(device, count);
             }
+            Console.Read();
             Console.WriteLine("Begin Scan Properties");
             foreach (var device in DevicesList)
             {
@@ -108,7 +109,7 @@ namespace BACnetScaner
                     }
                 }
             }
-            catch (Exception exp)
+            catch (Exception  )
             {
             }
         }
