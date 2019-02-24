@@ -1,7 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<configuration>
-  <appSettings>
-    <add key="OnlyConsole" value="False"/>
-    <add key="ScanBatchStep" value="50"/>
-  </appSettings>
-</configuration>

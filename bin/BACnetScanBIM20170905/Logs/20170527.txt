@@ -1,7 +1,0 @@
-12:18:04  Begin Translate BACnet Datas
-12:18:04  InitSettings Finished
-12:18:04  BeginScanBac
-12:18:16   ^ Heart Beat ^ 1
-16:34:29  Begin Translate BACnet Datas
-16:34:29  InitSettings Finished
-16:34:29  BeginScanBac

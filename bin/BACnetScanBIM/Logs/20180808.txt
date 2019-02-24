@@ -1,4 +1,0 @@
-18:05:13  Begin Translate BACnet Datas
-18:06:17  InitSettings Finished
-18:08:06  Detect Device: 1968
-18:08:11  Detect Device: 1969

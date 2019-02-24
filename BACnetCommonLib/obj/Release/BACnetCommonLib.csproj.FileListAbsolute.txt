@@ -1,5 +1,0 @@
-D:\Develop\BACnet研究\BACnetScanBIM\BACnetCommonLib\bin\Release\BACnetCommonLib.dll
-D:\Develop\BACnet研究\BACnetScanBIM\BACnetCommonLib\bin\Release\BACnetCommonLib.pdb
-D:\Develop\BACnet研究\BACnetScanBIM\BACnetCommonLib\obj\Release\BACnetCommonLib.csproj.CoreCompileInputs.cache
-D:\Develop\BACnet研究\BACnetScanBIM\BACnetCommonLib\obj\Release\BACnetCommonLib.dll
-D:\Develop\BACnet研究\BACnetScanBIM\BACnetCommonLib\obj\Release\BACnetCommonLib.pdb

@@ -1,5 +1,0 @@
-D:\Develop\BACnet研究\BACnetScanBIM\UDPUtil\bin\Release\UDPUtil.dll
-D:\Develop\BACnet研究\BACnetScanBIM\UDPUtil\bin\Release\UDPUtil.pdb
-D:\Develop\BACnet研究\BACnetScanBIM\UDPUtil\obj\Release\UDPUtil.csproj.CoreCompileInputs.cache
-D:\Develop\BACnet研究\BACnetScanBIM\UDPUtil\obj\Release\UDPUtil.dll
-D:\Develop\BACnet研究\BACnetScanBIM\UDPUtil\obj\Release\UDPUtil.pdb
