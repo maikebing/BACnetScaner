@@ -3,3 +3,7 @@
 ################################################################################
 
 /packages
+/.vs
+/BACnetScanBIM/obj
+/BACnetScanBIM/bin
+/BACnetScanBIM/Debug1
