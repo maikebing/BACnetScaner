@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26403.3
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BACnetScaner", "BACnetScanBIM\BACnetScaner.csproj", "{E55A7A05-CC0E-4A60-B4D7-8B50C33B7289}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BACnetScaner", "BACnetScaner\BACnetScaner.csproj", "{E55A7A05-CC0E-4A60-B4D7-8B50C33B7289}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
