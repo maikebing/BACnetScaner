@@ -13,7 +13,6 @@ namespace BACnetScaner
         static void Main(string[] args)
         {
             Bacnet_client = new BacnetClient(new BacnetIpUdpProtocolTransport(47808));
-            Bacnet_client.OnIam -= new BacnetClient.IamHandler(handler_OnIam);
             Bacnet_client.OnIam += new BacnetClient.IamHandler(handler_OnIam);
             Bacnet_client.Start();
             Bacnet_client.WhoIs();
@@ -25,11 +24,23 @@ namespace BACnetScaner
                 var count = GetDeviceArrayIndexCount(device);
                 ScanPointsBatch(device, count);
             }
-            Console.Read();
+
+
+            foreach (var device in DevicesList)
+            {
+                System.IO.File.WriteAllText($"{device.DeviceId}.json", Newtonsoft.Json.JsonConvert.SerializeObject(device));
+            }
+
+
+
             Console.WriteLine("Begin Scan Properties");
             foreach (var device in DevicesList)
             {
                 ScanSubProperties(device);
+            }
+            foreach (var device in DevicesList)
+            {
+                System.IO.File.WriteAllText($"{device.DeviceId}pppp.json", Newtonsoft.Json.JsonConvert.SerializeObject(device));
             }
             Console.WriteLine("Scan Finished");
 
